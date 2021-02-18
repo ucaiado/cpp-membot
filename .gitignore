@@ -32,7 +32,6 @@
 *.app
 
 # sumodules
-CppND-Route-Planning-Project/build
-P0267_RefImpl
-CppND-Route-Planning-Project/build
+CppND-Memory-Management-Chatbot/build
+CppND-Memory-Management-Chatbot
 .vscode/
