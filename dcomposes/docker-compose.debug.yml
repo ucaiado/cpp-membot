@@ -9,6 +9,7 @@ services:
       - "8080:8080"
     volumes:
       - ../CppND-Memory-Management-Chatbot:/CppND-Memory-Management-Chatbot
+      - ../mmgmt_chatbot/src:/CppND-Memory-Management-Chatbot/src
       - ../scripts/debug-project.sh:/debug-project.sh
     environment:
         - DISPLAY=docker.for.mac.host.internal:0
