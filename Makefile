@@ -11,23 +11,23 @@ basic-chatbot:
 	-f dcomposes/docker-compose.basic.yml \
 	run cpp
 
-complete-chatbot:
+compile-chatbot:
 	xhost + 127.0.0.1
 	docker-compose \
 	-p cpp-mmgmt-chatbot \
-	-f dcomposes/docker-compose.yml \
+	-f dcomposes/docker-compose.justcompile.yml \
 	run cpp
 
 debug-chatbot:
 	xhost + 127.0.0.1
 	docker-compose \
 	-p cpp-mmgmt-chatbot \
-	-f dcomposes/docker-compose.justcompile.yml \
+	-f dcomposes/docker-compose.debug.yml \
 	run cpp
 
-compile-chatbot:
+complete-chatbot:
 	xhost + 127.0.0.1
 	docker-compose \
 	-p cpp-mmgmt-chatbot \
-	-f dcomposes/docker-compose.justcompile.yml \
+	-f dcomposes/docker-compose.yml \
 	run cpp
