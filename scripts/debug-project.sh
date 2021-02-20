@@ -14,3 +14,6 @@ cd $BuildDir
 # build project
 cmake -DCMAKE_BUILD_TYPE=debug ..
 make
+
+# run the program created
+gdb membot
