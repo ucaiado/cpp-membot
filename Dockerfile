@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 RUN apt update -y && \
     apt install build-essential wget vim libcairo2-dev libgraphicsmagick1-dev clang-format \
-    libwxgtk3.0-dev libwxgtk3.0-0v5-dbg \
+    libwxgtk3.0-dev libwxgtk3.0-0v5-dbg gdb\
     libpng-dev software-properties-common -y && \
     apt-add-repository ppa:ubuntu-toolchain-r/test -y  && \
     apt update -y && \
