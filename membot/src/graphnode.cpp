@@ -7,7 +7,8 @@ GraphNode::~GraphNode() {
   //// STUDENT CODE
   ////
 
-  delete _chatBot;
+  // NOTE: It is causing the segfault when closing the app
+  // delete _chatBot;
 
   ////
   //// EOF STUDENT CODE
