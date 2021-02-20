@@ -28,8 +28,7 @@ In a terminal or command window, navigate to the top-level project directory
  repository.
 
 ```shell
-$ make ...
-$ make ...
+$ make complete-chatbot
 ```
 
 
