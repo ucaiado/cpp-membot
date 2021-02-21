@@ -42,6 +42,78 @@ ChatBot::~ChatBot() {
 //// STUDENT CODE
 ////
 
+ChatBot::ChatBot(const ChatBot &source) // 2 : copy constructor
+{
+  std::cout << "ChatBot Copy Constructor" << std::endl;
+  // data handles (owned) --> deep copy
+  _image = new wxBitmap(*(source._image));
+
+  // data handles (not owned) --> shallow copy
+  _chatLogic = source._chatLogic;
+  _rootNode = source._rootNode;
+  _currentNode = source._currentNode;
+
+  // NOTE: set the handle of the chatLogic of the copy
+  // source: https://knowledge.udacity.com/questions/235666
+  _chatLogic->SetChatbotHandle(this);
+}
+
+ChatBot &ChatBot::operator=(const ChatBot &source) // 3 : copy assigt operator
+{
+  std::cout << "ChatBot Copy Assignment Operator" << std::endl;
+  if (this == &source)
+    return *this;
+  _image = new wxBitmap(*(source._image));
+
+  _chatLogic = source._chatLogic;
+  _rootNode = source._rootNode;
+  _currentNode = source._currentNode;
+
+  _chatLogic->SetChatbotHandle(this);
+  return *this;
+}
+
+ChatBot::ChatBot(ChatBot &&source) // 4 : move constructor
+{
+  std::cout << "ChatBot Move Constructor" << std::endl;
+  _image = source._image;
+  _chatLogic = source._chatLogic;
+  _rootNode = source._rootNode;
+  _currentNode = source._currentNode;
+  _chatLogic->SetChatbotHandle(this);
+
+  source._image = NULL;
+  source._chatLogic = nullptr;
+  source._rootNode = nullptr;
+  source._currentNode = nullptr;
+}
+
+ChatBot &ChatBot::operator=(ChatBot &&source) // 5 : move assignment operator
+{
+  std::cout << "ChatBot Move Assignment Operator" << std::endl;
+  if (this == &source)
+    return *this;
+
+  if (_image != NULL) // Attention: wxWidgets used NULL and not nullptr
+  {
+    delete _image;
+    _image = NULL;
+  }
+
+  _image = source._image;
+  _chatLogic = source._chatLogic;
+  _rootNode = source._rootNode;
+  _currentNode = source._currentNode;
+  _chatLogic->SetChatbotHandle(this);
+
+  source._image = NULL;
+  source._chatLogic = nullptr;
+  source._rootNode = nullptr;
+  source._currentNode = nullptr;
+
+  return *this;
+}
+
 ////
 //// EOF STUDENT CODE
 
