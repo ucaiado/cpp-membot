@@ -30,8 +30,8 @@ $ make basic-chatbot
 
 ### Run
 In a terminal or command window, navigate to the top-level project directory
- `cpp-system-monitor/` (that contains this README) and run the following
- command, which will start a monitor using the code implemented in this
+ `cpp-membot/` (that contains this README) and run the following
+ command, which will start a chatbot using the code implemented in this
  repository.
 
 ```shell
