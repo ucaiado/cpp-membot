@@ -20,8 +20,12 @@ To set up your environment to run the code in this repository, start by cloning
  this project using the `--recurse-submodules` flag. Afterward, install Docker
  in your machine and the appropriate Xserver. Then, start both and configure
  Xserver as explained [here](https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb).
- You may need to restart your computer. Finally, run the following commands.
- This will start a initial chatbot to test the environment.
+ You also may need to edit the environment variable [DISPLAY](https://medium.com/better-programming/running-desktop-apps-in-docker-43a70a5265c4)
+ in the docker-compose files in the `dcomposes/` folder, depending on your
+ operating system. Currently, it is set up to work on the macOS. Finally, run
+ the following commands. This will start an initial chatbot to test the
+ environment.
+
 ```shell
 $ make docker-build
 $ make basic-chatbot
