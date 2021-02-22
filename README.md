@@ -22,9 +22,9 @@ To set up your environment to run the code in this repository, start by cloning
  Xserver as explained [here](https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb).
  You also may need to edit the environment variable [DISPLAY](https://medium.com/better-programming/running-desktop-apps-in-docker-43a70a5265c4)
  in the docker-compose files in the `dcomposes/` folder, depending on your
- operating system. Currently, it is set up to work on the macOS. Finally, run
- the following commands. This will start an initial chatbot to test the
- environment.
+ operating system (and add `network_mode: "host"` if you are using [Linux](https://stackoverflow.com/questions/35960452/docker-compose-running-containers-in-nethost)).
+ Currently, it is set up to work on the macOS. Finally, run the following
+ commands. This will start an initial chatbot to test the environment.
 
 ```shell
 $ make docker-build
